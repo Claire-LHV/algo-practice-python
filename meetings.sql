@@ -29,7 +29,7 @@ values
 select
     count(*) as least_rooms_needed
 from meetings a
-join meetings b on b.start_time between a.start_time and a.end_time -- and a.id != b.id
+join meetings b on b.start_time >= a.start_time and b.start_time < a.end_time -- and a.id != b.id
 group by a.id
 order by least_rooms_needed desc
 limit 1

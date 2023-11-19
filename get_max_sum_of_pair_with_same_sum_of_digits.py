@@ -15,10 +15,7 @@ def get_max_pair_sum(
     if len(array) < 2:
         return 0  # we don't want to include this
 
-    if len(array) == 2:
-        return array[0] + array[1]
-
-    greatest = second_greatest = array[0]
+    greatest = second_greatest = 0
     for val in array:
         if val >= greatest:
             second_greatest = greatest
